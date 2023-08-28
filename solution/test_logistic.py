@@ -29,7 +29,7 @@ def test_f_corner_cases():
 
 
 def test_random_convergence():
-    SEED=42
+    SEED = 42
     random_state = np.random.RandomState(SEED)
     r = 1.5
     for _ in range(100):
@@ -37,13 +37,12 @@ def test_random_convergence():
         xs = iterate_f(it=100, x0=x0, r=r)
         assert np.isclose(xs[-1], 1 / 3)
 
-SEED = 42
-
-@pytest.fixture
-def random_state():
-    print(f"Using seed {SEED}")
-    random_state = np.random.RandomState(SEED)
-    return random_state
+# SEED = 42
+# @pytest.fixture
+# def random_state():
+#     print(f"Using seed {SEED}")
+#     random_state = np.random.RandomState(SEED)
+#     return random_state
 
 
 #@pytest.mark.xfail
